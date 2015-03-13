@@ -19,8 +19,9 @@
 
            <% if current_user %>
            <%= current_user.first_name %>
+           <%= link_to "Sign out", signout_path %>
            <% end %>
-           
+
          </div>
        </div>
            <%= form_tag("/search", method: "get") do %>
