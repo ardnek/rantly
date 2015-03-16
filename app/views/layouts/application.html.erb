@@ -16,11 +16,14 @@
            <%= link_to "Rants", root_path %>
            <%= link_to "Users", users_path %>
            <%= link_to "Sign Up", signup_path %>
+           <%= link_to "Sign In", signin_path %>
 
            <% if current_user %>
            <%= current_user.first_name %>
            <%= link_to "Sign out", signout_path %>
            <% end %>
+
+
 
          </div>
        </div>
