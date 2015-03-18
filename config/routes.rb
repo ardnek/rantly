@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   # using authentication or sessions controller for sign-in
 
   resources :users
+  resources :rants
 
 end
