@@ -9,5 +9,6 @@ Edit Rant!
   <%= f.text_field :body %>
 
   <%= f.submit "Save" %>
+  <%= link_to "Delete", rant_path(@rant), method: :delete %>
 
 <% end %>

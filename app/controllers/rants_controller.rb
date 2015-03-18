@@ -39,6 +39,11 @@ class RantsController < ApplicationController
     end
   end
 
+  def destroy
+    @rant = Rant.find(params[:id])
+    @rant.destroy
+    redirect_to root_path
+  end
 
 
   private
