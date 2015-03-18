@@ -4,4 +4,5 @@ Rants!
 <% @rants.each do |rant| %>
 <%= rant.title %>
 <%= rant.body %>
+<%= link_to "Edit", edit_rant_path(rant) %>
 <% end %>

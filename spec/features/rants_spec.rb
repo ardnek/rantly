@@ -22,4 +22,29 @@ feature "Rants" do
     expect(page).to have_content ("Rant body here")
   end
 
+  scenario "Users can edit a rant" do
+    visit root_path
+    click_on "Sign Up"
+    fill_in "First name", with: "Bill"
+    fill_in "Last name", with: "Murray"
+    fill_in "Email", with: "bill@murray.com"
+    fill_in "Password", with: "password"
+    within ".form-horizontal" do
+      click_on "Sign Up"
+    end
+
+    visit root_path
+    click_on "New Rant"
+    fill_in "Title", with: "Rant title here"
+    fill_in "Body", with: "Rant body here"
+    click_on "Save"
+    expect(page).to have_content ("Rant title here")
+    expect(page).to have_content ("Rant body here")
+    click_on "Edit"
+    fill_in "Title", with: "This is the edited title"
+    fill_in "Body", with: "This is the edited body"
+    click_on "Save"
+    expect(page).to have_content("This is the edited title")
+    expect(page).to have_content("This is the edited body")
+  end
 end

@@ -25,6 +25,22 @@ class RantsController < ApplicationController
     end
   end
 
+  def edit
+    @rant = Rant.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @rant = Rant.find(params[:id])
+    if @rant.update(rant_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+
+
   private
 
   def rant_params
