@@ -5,4 +5,4 @@ def create_user(overrides = {})
       email: "audrey@hepburn.com",
       password: "password",
     }.merge(overrides))
-  end
+end
