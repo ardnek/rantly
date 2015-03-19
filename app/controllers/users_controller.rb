@@ -4,5 +4,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    @rants = Rant.all
+  end
+
+
 
 end

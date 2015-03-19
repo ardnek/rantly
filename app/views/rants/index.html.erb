@@ -2,7 +2,7 @@
 Rants!
 
 <% @rants.each do |rant| %>
-<%= rant.title %>
-<%= rant.body %>
-<%= link_to "Edit", edit_rant_path(rant) %>
+<%= rant.title %><br>
+<%= rant.body %><br>
+<%= link_to "Edit", edit_rant_path(rant) %><br><br>
 <% end %>
