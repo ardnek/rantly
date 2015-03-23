@@ -1,8 +1,9 @@
 
-Rants!
+<h3>Rants!</h3>
 
-<% @rants.each do |rant| %>
+<% @rants.reverse_each do |rant| %>
 <%= rant.title %><br>
 <%= rant.body %><br>
+<%= rant.created_at %><br>
 <%= link_to "Edit", edit_rant_path(rant) %><br><br>
 <% end %>

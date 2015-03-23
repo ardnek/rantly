@@ -1,4 +1,4 @@
-Rant!
+<h3>New Rants!</h3>
 
 <% if @rant.errors.any? %>
 <% @rant.errors.full_messages.each do |message| %>
@@ -16,5 +16,6 @@ Rant!
   <%= f.text_field :body %>
 
   <%= f.submit "Save" %>
+  <%= link_to "Cancel", rants_path, class: 'btn btn-default btn-sm' %>
 
 <% end %>

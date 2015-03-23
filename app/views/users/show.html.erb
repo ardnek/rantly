@@ -2,5 +2,6 @@ Show rants here:<br><br>
 
 <% @rants.each do |rant| %>
 <%= rant.title %><br><br>
-<%= rant.body %>
+<%= rant.body %><br>
+<%= rant.created_at %><br><br>
 <% end %>

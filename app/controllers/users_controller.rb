@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @rants = Rant.all
+    @rants = Rant.all.order('created_at DESC')
   end
 
 
