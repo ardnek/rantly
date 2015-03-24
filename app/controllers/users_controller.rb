@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @rants = Rant.all.order('created_at DESC')
+    @user = User.find(params[:id])
+    @rants = @user.rants.all.order('created_at DESC')
   end
 
 

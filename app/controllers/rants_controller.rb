@@ -3,6 +3,10 @@ class RantsController < ApplicationController
   def index
     @rants = Rant.all
     @rants = Rant.search(params[:search])
+    if @rants.count < 1
+      flash[:notice] = "These are not the droids you are looking for."
+      render :index
+    end
   end
 
   def new
