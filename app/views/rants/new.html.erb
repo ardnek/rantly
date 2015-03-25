@@ -13,9 +13,11 @@
   <%= f.text_field :title %>
 
   <%= f.label :body %>
-  <%= f.text_field :body %>
+  <%= f.text_area :body, class:"text-area message", :placeholder => "Start your rant." %>
 
   <%= f.submit "Save" %>
   <%= link_to "Cancel", rants_path, class: 'btn btn-default btn-sm' %>
+
+  <span class="countdown"></span>
 
 <% end %>

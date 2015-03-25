@@ -13,6 +13,24 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require_tree 
  *= require_self
  */
+
+ html {
+   margin: 0;
+   height: 85%;
+   width: 100%
+ }
+
+ body {
+   margin: 0;
+   height: 100%;
+ }
+
+ .container {
+   overflow: scroll;
+   border: 1xpx solid red;
+   width: 100%;
+   height: 100%;
+ }
