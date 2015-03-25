@@ -1,5 +1,7 @@
 == Rantly
 
-Production URL:
+Project currently in progress ... ... ... ...
+
+Production URL: https://rantly-ardnek.herokuapp.com
 
 Rantly allows a certain freedom never before possible. Now you can rant to the internet at large without having to filter your words or thoughts. Just type whatever is on your mind, hit click, and feel a huge surge of relief that everything is off your chest. Thanks to Rantly your my most inane rants will be heard.
