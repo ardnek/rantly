@@ -1,5 +1,17 @@
-<h3>Hello Users</h3>
-
-<% @users.each do |user| %>
+<!-- <% @users.reverse_each do |user| %>
 <%= link_to user.full_name, user_path(user) %><br>
-<% end %>
+<% end %> -->
+
+<div class="scroll">
+  <div class="row">
+    <% @users.reverse_each do |user| %>
+      <div class="user-tile">
+
+        <div>
+          <%= link_to user.full_name, user_path(user) %><br>
+          <span><%= user.email %></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

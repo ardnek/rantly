@@ -5,14 +5,18 @@ class RantsController < ApplicationController
   def index
     @rants = Rant.all
     @rants = Rant.search(params[:search])
-    if @rants.count < 1
-      flash[:notice] = "These are not the droids you are looking for."
-      render :index
-    end
+    # if @rants.count < 1
+    #   flash[:notice] = "These are not the droids you are looking for."
+    #   render :index
+    # end
   end
 
   def new
-    @rant = Rant.new
+    if current_user
+      @rant = Rant.new
+    else
+      redirect_to rants_path, notice: 'You must log in!'
+    end
   end
 
   def create
@@ -27,7 +31,7 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to rants_path, notice: "Rant created"
     else
-      render :new
+      render :new, notice: "You've gotta say more than that!"
     end
   end
 

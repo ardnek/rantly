@@ -1,19 +1,32 @@
-Sign-up!
+  <!-- <%= form_for @user, url: signup_path, html: {class: "form-horizontal"} do |f| %>
 
-<%= form_for @user, url: signup_path, html: {class: "form-horizontal"} do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.submit "Sign Up" %>
 
-  <%= f.submit "Sign Up" %>
+    <% end %> -->
 
-<% end %>
+<div class="scroll">
+  <div class="form">
+    <%= form_for @user do |f| %>
+      <%= f.text_field :first_name, class: "user-form", placeholder: "First Name" %>
+      <%= f.text_field :last_name, class: "user-form", placeholder: "Last Name" %>
+      <%= f.email_field :email, class: "user-form", placeholder: "Email" %>
+      <div class="has-feedback lower-glyphicon">
+        <%= f.password_field :password, class: "user-form", placeholder: "Password" %>
+        <i class="fa fa-lock form-control-feedback"></i>
+      </div>
+      <%= f.submit "Log In", class:"profile-button" %>
+    <% end %>
+  </div>
+</div>

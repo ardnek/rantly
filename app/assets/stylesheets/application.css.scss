@@ -1,5 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// @import "buttons";
+// @import "user_tiles";
+// @import "user_form";
+// @import "fonts";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -17,36 +21,432 @@
  *= require_self
  */
 
- html {
-   margin: 0;
-   height: 85%;
-   width: 100%
- }
 
- body {
-   margin: 0;
-   height: 100%;
- }
+html {
+  font-family: 'Laila', serif;
+  font-family: 'Hind', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #34495E;
+  margin: 0;
+  height: 85%;
+  width: 100%;
+}
 
- .container {
-   overflow: scroll;
-   border: 1xpx solid red;
-   width: 100%;
-   height: 100%;
- }
+p {
+  float: right;
+}
 
- .navbar-header .navbar-header-brand {
-   font-size: 30px;
-   padding-left: 10px;
- }
+body {
+  margin: 0;
+  height: 100%;
+}
 
- .navbar a {
-   float: left;
-   display: block;
-   position: relative;
-   color: #fff;
-   padding: 15px;
-   font-size: 16px;
-   font-weight: 700;
-   line-height: 23px;
- }
+.container {
+  padding: 0 0 0 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.container1 {
+  margin-left: -15px;
+  padding: 15px;
+  width: 73.4%;
+  min-width: 100px;
+  float: left;
+  height: 100%;
+}
+
+.navbar, .header {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  color: white;
+  padding: 6px 15px 4px 10px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.navbar {
+  font-size: 32px;
+  background: #34495E;
+}
+
+.navbar a {
+  color: white;
+  font-size: 32px;
+  background: #34495E;
+  text-decoration: none;
+}
+
+.navbar span a {
+  font-size: 16px;
+  padding-left: 20px;
+  vertical-align: 25%;
+  color: white;
+  text-decoration: none;
+}
+
+.header {
+  font-size: 24px;
+  background: #3498DB;
+}
+
+.profile-pic, .avatar {
+  height: 100px;
+  background: url("http://www.gravatar.com/avatar/undefined?s=450") center/cover no-repeat;
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+  border: 5px dashed #34495E;
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.test {
+  color: white;
+}
+
+.avatar {
+  clear: both;
+  float: left;
+  display: inline-block;
+  width: 20%;
+  margin-right: 20px;
+}
+
+.rant-head {
+  float: left;
+  width: 100%;
+  padding-bottom: 20px;
+  a {
+  text-decoration: none;
+  }
+}
+
+.rant-head h2 {
+  a {
+  color:#34495E;
+  }
+}
+
+.rant-post {
+  width: 100%;
+  padding-top: 150px;
+  clear: both;
+  display: inline;
+}
+
+.text-area {
+  float: left;
+  width: 77%;
+  min-height: 100px;
+  outline: none;
+  resize: none;
+  border: none;
+}
+
+.sidebar {
+  float: left;
+  width: 25%;
+  border-right: 1px solid #EFEFEF;
+  box-shadow: -1px 2px 1px 1px rgba(225,225,225,0.6);
+  margin-right: 20px;
+}
+
+.rant-box {
+  font-family: 'Hind', sans-serif;
+  display: inline;
+  float: right;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #EFEFEF;
+  margin: 0 0 15px 0;
+  border-radius: 4px;
+  box-shadow: -1px 1px 1px 1px rgba(225,225,225,0.6);
+  overflow: hidden;
+}
+
+.rant-box h2 {
+  font-family: 'Laila', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  display: inline;
+}
+
+.wide {
+  float: left;
+  max-width: 600px;
+  min-width: 500px;
+  display: inline;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #EFEFEF;
+  margin-bottom: 20px;
+}
+
+.wide:hover {
+  transition: 0.25s;
+  border-bottom: 2px solid #1ABC9C;
+}
+
+// .scroll {
+//   background: 3px solid red;
+//   width: 100%;
+//   height: 100%;
+//   overflow: scroll;
+// }
+
+.countdown {
+  float: left;
+  display: block;
+  }
+
+.search {
+  font-family: 'Helvetica''Arial', sans-serif;
+  border: none;
+  outline: none;
+  background: #3498DB;
+  color: #34495E;
+  width: 300px;
+  display: inline;
+}
+
+.search::-webkit-input-placeholder {
+   color: white;
+}
+
+.inline {
+  display: inline;
+}
+
+.scroll {
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+textarea {
+  height: 300px;
+  border: 2px solid #ECF0F1;
+  color: #34495E;
+  font-size: 18px
+}
+
+textarea:hover {
+  border: 2px solid #1ABC9C;
+}
+
+.message {
+  margin-left: auto;
+}
+
+// USER-FORM CSS
+
+.user-form {
+  width: 100%;
+  padding:10px;
+  font-size: 14pt;
+  border-radius: 3px;
+  border: 2px solid #E7ECEE;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+// .profile-box .user-form {
+//   width: 94%;
+//   padding: 5px;
+//   margin-left: 3%;
+//   margin-right: 3%;
+// }
+
+.has-feedback .form-control-feedback {
+  margin: 10px 10px 0 0;
+}
+
+.lower-glyphicon .form-control-feedback {
+  margin: 16px 10px 0 0;
+}
+
+.has-feedback .fa-user, .has-feedback .fa-lock {
+  color: #E7ECEE;
+  font-size: 16pt;
+}
+
+// USER TILE CSS:
+
+.user-tile {
+  float: left;
+  padding: 15px 15px;
+  margin-left: 15px;
+  width: 23.2%;
+  min-height: 190px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  font-size: 12pt;
+  font-family: 'Laila', sans-serif;
+}
+
+.user-tile .avatar {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.avatar img {
+  height: 100px;
+}
+
+.user-tile span {
+  font-size: 8pt;
+}
+
+.row {
+  margin: 0 -15px;
+}
+
+// USER FORM CSS
+
+.user-form {
+  width: 100%;
+  padding:10px;
+  font-size: 14pt;
+  border-radius: 3px;
+  border: 2px solid #E7ECEE;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.profile-box .user-form {
+  width: 94%;
+  padding: 5px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.has-feedback .form-control-feedback {
+  margin: 10px 10px 0 0;
+}
+
+.lower-glyphicon .form-control-feedback {
+  margin: 16px 10px 0 0;
+}
+
+.has-feedback .fa-user, .has-feedback .fa-lock {
+  color: #E7ECEE;
+  font-size: 16pt;
+
+}
+
+// BUTTONS CSS
+
+.new-button {
+  background: white;
+  color: #1ABC9C;
+  padding: 6px 13px;
+  margin-right: 15px;
+  display: inline;
+  float: right;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 4px;
+  transition-duration: .25s;
+}
+
+.new-button:hover {
+  background: #1ABC9C;
+  color: white;
+  text-decoration: none;
+}
+
+.profile-button {
+  background: #1ABC9C;
+  color: white;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 3px;
+  width: 99%;
+  transition-duration: .25s;
+  margin: 1px;
+  border: 1px solid white;
+  height: 30px;
+}
+
+.form .profile-button {
+  width: 100%;
+}
+
+.drops {
+  line-height: 1.8;
+}
+
+.profile-button:hover {
+  border: 1px solid #1ABC9C;
+  background: white;
+  color: #1ABC9C;
+}
+
+.body-button, .cancel-button, .delete-button {
+  color: white;
+  display: inline;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 3px;
+  transition-duration: .25s;
+  line-height: 2.1;
+  margin: 1px;
+  border: 1px solid white;
+  height: 30px;
+  padding: 8px 10px 0 10px;
+  float: right;
+  a {
+    color: white;
+  }
+}
+
+.lift {
+  padding-top: 2px;
+}
+
+.body-button {
+  background: #1ABC9C;
+  a {
+    color: white;
+  }
+}
+
+.cancel-button {
+  background: #B3B3B3;
+}
+
+.delete-button {
+  background: #EEBB00;
+}
+
+.body-button:hover {
+  border: 1px solid #1ABC9C;
+  background: white;
+  color: #1ABC9C;
+  a {
+    color: #1ABC9C;
+  }
+}
+
+.cancel-button:hover {
+  border: 1px solid #B3B3B3;
+  background: white;
+  color: #B3B3B3;
+  a {
+    color: #B3B3B3;
+  }
+}
+
+.delete-button:hover {
+  border: 1px solid #EEBB00;
+  background: white;
+  color: #EEBB00;
+  a {
+    color: #EEBB00;
+  }
+}

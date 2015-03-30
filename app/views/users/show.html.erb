@@ -1,7 +1,23 @@
-Show rants here:<br><br>
+<div class="scroll">
 
-<% @rants.each do |rant| %>
-<%= rant.title %><br><br>
-<%= rant.body %><br>
-<%= rant.created_at %><br><br>
-<% end %>
+  <% @rants.reverse_each do |rant| %>
+
+    <div class="rant-box">
+      <div class="rant-head">
+
+        <% if rant.user == current_user %>
+          <%= link_to "Edit", edit_rant_path(rant), class: "body-button fa fa-edit" %>
+        <% end %>
+
+        <h2><%= link_to rant.title, rant_path(rant) %></h2><br>
+      </div>
+
+        <div class="rant-post">
+          <%= rant.body %><br><br>
+        </div>
+
+        <%= rant.created_at %><br><br>
+
+    </div>
+  <% end %>
+</div>

@@ -1,11 +1,26 @@
-Sign-in!
+<div class="container">
+    <div class="profile-box">
+      <br>
 
-<%= form_tag signin_path %>
+      <%= form_tag signin_path %>
 
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
+      <%= form_tag @user do |f| %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+      <div class="has-feedback">
+        <%= email_field_tag :email, nil, class:"user-form", placeholder: "Your email" %>
+        <i class="fa fa-user form-control-feedback"></i>
+      </div>
 
-  <%= submit_tag "Log In" %>
+      <div class="has-feedback">
+        <%= password_field_tag :password, nil, class:"user-form", placeholder: "Your password" %>
+        <i class="fa fa-lock form-control-feedback"></i>
+      </div>
+
+      <div class="form-group">
+        <%= submit_tag "Log In", class: "profile-button" %>
+      </div>
+
+      <% end %>
+
+    </div>
+</div>

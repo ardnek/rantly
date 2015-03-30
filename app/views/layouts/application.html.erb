@@ -5,53 +5,57 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Laila:700|Hind:200' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 
-  <div class="header">
-     <div class="navbar navbar-default" role="navigation">
-       <div class="container">
-         <div class="navbar-header">
-           <a class="navbar-brand"<%=link_to "Rantly", root_path %></a>
-           <a id="nav"<%= link_to "Rants", root_path %></a>
-           <a id="nav"<%= link_to "Users", users_path %></a>
-           <a id="nav"<%= link_to "Sign Up", signup_path %></a>
+  <div class= "navbar">
+    <div class="container">
+         <%=link_to "Rantly", root_path %></a>
+            <span><%= link_to "Rants", root_path %></span>
+            <span><%= link_to "Users", users_path %></span>
+            <span><%= link_to "Sign Up", signup_path %></span>
 
-           <%= link_to "Sign In", signin_path %>
+            <span><%= link_to "Sign In", signin_path %>
 
            <% if current_user %>
-           <%= current_user.first_name %>
-           <%= link_to "Sign out", signout_path %>
+              <span class = "pull-right"><%= current_user.first_name %></span>
+              <span><%= link_to "Sign out", signout_path %></span>
            <% end %>
-         </div>
-       </div>
+    </div>
+  </div>
+
            <!-- <%= form_tag("/search", method: "get") do %>
            <%= label_tag(:q, "Search for:") %>
            <%= text_field_tag(:q, nil, :placeholder => "Search") %>
            <%= submit_tag("Search") %>
            <% end %> -->
+  <div class="header">
+    <div class="container">
 
        <%= form_tag search_path, class:"search", :method => 'get' do %>
-       <% if params[:search] == "" %>
-       <%= text_field_tag :search, params[:search], placeholder: "This can't be blank!", class: "search" %>
+         <% if params[:search] == "" %>
+           <%= text_field_tag :search, params[:search], placeholder: "This can't be blank!", class: "search" %>
        <% else %>
-       <%= text_field_tag :search, params[:search], placeholder: "Search", class: "search" %>
+         <%= text_field_tag :search, params[:search], placeholder: "Search", class: "search" %>
        <% end %>
-       <%= submit_tag "Search", :name => nil, class: "btn btn-warning" %>
-       <% end %>
-
-       <% if flash[:notice] %>
-       <div class="notice"><%= flash[:notice] %></div>
+         <!-- <%= submit_tag "Search", :name => nil, class: "btn btn-warning" %> -->
        <% end %>
 
-           <%= link_to "New Rant", new_rant_path %>
-     </div>
-   </div>
+           <%= link_to "New Rant", new_rant_path, class: "new-button" %>
+    </div>
+  </div>
 
 
-<div class="container">
-<%= yield %>
-</div>
+  <div class="rcontainer">
+
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <span class="scroll"><%= yield %></span>
+  </div>
 
 </body>
 </html>
