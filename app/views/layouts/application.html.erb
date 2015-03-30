@@ -12,17 +12,17 @@
 
   <div class= "navbar">
     <div class="container">
-         <%=link_to "Rantly", root_path %></a>
-            <span><%= link_to "Rants", root_path %></span>
-            <span><%= link_to "Users", users_path %></span>
-            <span><%= link_to "Sign Up", signup_path %></span>
+      <%=link_to "Rantly", root_path %></a>
+        <span><%= link_to "Rants", root_path %></span>
+        <span><%= link_to "Users", users_path %></span>
+        <span><%= link_to "Sign Up", signup_path %></span>
 
-            <span><%= link_to "Sign In", signin_path %>
+        <span><%= link_to "Sign In", signin_path %>
 
-           <% if current_user %>
-              <span class = "pull-right"><%= current_user.first_name %></span>
-              <span><%= link_to "Sign out", signout_path %></span>
-           <% end %>
+        <% if current_user %>
+        <span class = "pull-right"><%= current_user.first_name %></span>
+        <span><%= link_to "Sign out", signout_path %></span>
+        <% end %>
     </div>
   </div>
 
@@ -31,11 +31,12 @@
            <%= text_field_tag(:q, nil, :placeholder => "Search") %>
            <%= submit_tag("Search") %>
            <% end %> -->
+
   <div class="header">
     <div class="container">
 
        <%= form_tag search_path, class:"search", :method => 'get' do %>
-         <% if params[:search] == "" %>
+       <% if params[:search] == "" %>
            <%= text_field_tag :search, params[:search], placeholder: "This can't be blank!", class: "search" %>
        <% else %>
          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "search" %>
@@ -43,17 +44,14 @@
          <!-- <%= submit_tag "Search", :name => nil, class: "btn btn-warning" %> -->
        <% end %>
 
-           <%= link_to "New Rant", new_rant_path, class: "new-button" %>
+       <%= link_to "New Rant", new_rant_path, class: "new-button" %>
     </div>
   </div>
 
-
   <div class="rcontainer">
-
     <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
     <% end %>
-
     <span class="scroll"><%= yield %></span>
   </div>
 
