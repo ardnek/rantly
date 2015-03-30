@@ -1,24 +1,6 @@
-  <!-- <%= form_for @user, url: signup_path, html: {class: "form-horizontal"} do |f| %>
-
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.submit "Sign Up" %>
-
-    <% end %> -->
-
 <div class="scroll">
   <div class="form">
-    <%= form_for @user do |f| %>
+    <%= form_for @user, url: signup_path do |f| %>
       <%= f.text_field :first_name, class: "user-form", placeholder: "First Name" %>
       <%= f.text_field :last_name, class: "user-form", placeholder: "Last Name" %>
       <%= f.email_field :email, class: "user-form", placeholder: "Email" %>
