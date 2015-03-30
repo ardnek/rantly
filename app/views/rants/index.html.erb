@@ -23,7 +23,7 @@
 
       <div class="rant-post">
         <%= rant.body %><br><br>
-        <%= rant.created_at %><br><br>
+        <%= rant.created_at.strftime "%m-%d-%y" %><br><br>
       </div>
     </div>
   <% end %>
