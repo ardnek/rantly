@@ -12,19 +12,17 @@
      <div class="navbar navbar-default" role="navigation">
        <div class="container">
          <div class="navbar-header">
-           <a class="navbar-brand"<%=link_to "Rantly", root_path%></a>
-           <%= link_to "Rants", root_path %>
-           <%= link_to "Users", users_path %>
-           <%= link_to "Sign Up", signup_path %>
+           <a class="navbar-brand"<%=link_to "Rantly", root_path %></a>
+           <a id="nav"<%= link_to "Rants", root_path %></a>
+           <a id="nav"<%= link_to "Users", users_path %></a>
+           <a id="nav"<%= link_to "Sign Up", signup_path %></a>
+
            <%= link_to "Sign In", signin_path %>
 
            <% if current_user %>
            <%= current_user.first_name %>
            <%= link_to "Sign out", signout_path %>
            <% end %>
-
-
-
          </div>
        </div>
            <!-- <%= form_tag("/search", method: "get") do %>

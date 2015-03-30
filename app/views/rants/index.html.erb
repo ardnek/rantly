@@ -4,6 +4,12 @@
 <% @rants.reverse_each do |rant| %>
 <%= rant.title %><br>
 <%= rant.body %><br>
-<%= rant.created_at %><br>
+<%= rant.created_at %><br><br>
+
+<% if current_user %>
+<% if current_user.id == rant.user_id %>
 <%= link_to "Edit", edit_rant_path(rant) %><br><br>
+<% end %>
+<% end %>
+
 <% end %>

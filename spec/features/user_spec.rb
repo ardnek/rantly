@@ -16,4 +16,20 @@ feature "Users" do
     visit users_path
     expect(page).to have_content("Audrey")
   end
+
+    scenario "Users can click on a single user to see all of the users rants" do
+      user = create_user
+      visit root_path
+      click_on "Sign Up"
+      fill_in "First name", with: "Bill"
+      fill_in "Last name", with: "Murray"
+      fill_in "Email", with: "bill@murray.com"
+      fill_in "Password", with: "password"
+      within ".form-horizontal" do
+        click_on "Sign Up"
+      end
+      visit users_path
+      expect(page).to have_content("Audrey")
+    end
+
 end

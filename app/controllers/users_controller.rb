@@ -9,6 +9,4 @@ class UsersController < ApplicationController
     @rants = @user.rants.all.order('created_at DESC')
   end
 
-
-
 end
