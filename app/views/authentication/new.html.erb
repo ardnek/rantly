@@ -2,9 +2,7 @@
     <div class="profile-box">
       <br>
 
-      <%= form_tag signin_path %>
-
-      <%= form_tag @user do |f| %>
+      <%= form_tag @user, url: signin_path do |f| %>
 
       <div class="has-feedback">
         <%= email_field_tag :email, nil, class:"user-form", placeholder: "Your email" %>
