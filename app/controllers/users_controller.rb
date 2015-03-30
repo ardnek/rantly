@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @rants = @user.rants.all.order('created_at DESC')
   end
 
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
